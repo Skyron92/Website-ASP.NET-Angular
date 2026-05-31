@@ -1,0 +1,13 @@
+# .gitignore à la racine
+# -- .NET --
+bin/
+obj/
+*.user
+
+# -- Angular --
+node_modules/
+dist/
+
+# -- IDEs --
+.idea/
+.vscode/
