@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --primary-color: white;
+  --secondary-color: orange;
+  --ternary-color: chocolate;
+  --background-gradient: linear-gradient(90deg, #01070f, #0e124b, #1f9bd5) no-repeat;
+}
+
+body{
+  background-color: var(--background-gradient);
+}
+
+.full-width{
+  width: 100%;
+  margin: 0;
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+h1,h2,h3,h4,h5,h6,span,p, a, button{
+  font-family: Rubik, sans-serif;
+}
+
+a{
+  border-bottom: none;
+  transform :scale(1);
+  transition: transform 0.1s ease-in-out;
+  color: var(--primary-color);
+}
+
+a:hover{
+  color: var(--secondary-color);
+  border-bottom: solid 1px var(--secondary-color);
+  transform :scale(1.2);
+  transition: transform 0.1s ease-in-out;
+}
