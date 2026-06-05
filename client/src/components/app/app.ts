@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Api } from '../../services/api';
 import { Header } from '../header/header';
+import { Home } from '../home/home';
 
 interface Weather {
   TemperatureC: number;
@@ -11,7 +12,7 @@ interface Weather {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header],
+  imports: [RouterOutlet, Header, Home],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
