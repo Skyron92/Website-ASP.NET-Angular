@@ -1,21 +1,13 @@
 <header>
 <mat-toolbar>
-  <a matButton routerLink="/">Léo Courtier</a>
+  <a mat-button [disableRipple]="true" routerLink="/">Léo Courtier</a>
   <span class="spacer"></span>
-  <a matFab extended routerLink="/skills">
-    <mat-icon>bolt</mat-icon>
-    Mes compétences</a>
-  <a matFab extended routerLink="/projects">
-    <mat-icon>code</mat-icon>
-    Mes projets
-  </a>
-  <a matFab extended routerLink="/experience">
-    <mat-icon>work</mat-icon>
-    Mon parcours
-  </a>
-  <a matFab extended routerLink="/contact">
-    <mat-icon>mail</mat-icon>
-    Contact
-  </a>
+  @for (nav of navigators; track nav){
+    <a mat-button disableRipple [routerLink]="nav.route">
+      <mat-icon class="visible-on-hover">chevron_right</mat-icon>
+      <mat-icon>{{nav.icon}}</mat-icon>
+      {{nav.name}}
+    </a>
+  }
 </mat-toolbar>
 </header>

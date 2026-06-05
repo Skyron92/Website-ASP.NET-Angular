@@ -11,12 +11,16 @@ html {
     (
       color: (
         primary: mat.$azure-palette,
+        secondary: mat.$azure-palette,
         tertiary: mat.$blue-palette,
       ),
-      typography: Roboto,
+      typography: Rubik,
       density: 0,
     )
   );
+  --mat-sys-surface: linear-gradient(90deg, #676a6f, #6e7193, #79c3e6) no-repeat;
+  --mat-sys-on-surface: white;
+  --mat-sys-primary: orange;
 }
 
 body {
@@ -28,7 +32,7 @@ body {
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
+  background: linear-gradient(90deg, #01070f, #0e124b, #1f9bd5) no-repeat fixed;
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
 
