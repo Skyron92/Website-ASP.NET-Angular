@@ -9,7 +9,7 @@ export class Api {
 
   constructor(private http: HttpClient) { }
 
-  getForecasts() {
-    return this.http.get(`${this.apiUrl}/weatherforecast`);
+  getHome() {
+    return this.http.get(`${this.apiUrl}/api/home`);
   }
 }

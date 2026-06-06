@@ -1,22 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { Api } from '../../services/api';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
+
+interface HomeData{
+  title: string;
+  presentation: string;
+  imageUrl: string;
+}
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [NgOptimizedImage, MatProgressSpinner],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
-  private readonly birthday: Date = new Date(2002, 10, 9);
+  constructor(private api: Api) {}
 
-  protected readonly title: string = "Développeur web et 3D temps réel";
+  home = signal<HomeData | null>(null);
 
-  protected readonly presentation: string = `Bienvenue sur mon portfolio. Je m'appelle Léo et j'ai ${this.getAge()} ans.`;
-
-  private getAge(): number {
-    const today = new Date();
-    let age = today.getFullYear() - this.birthday.getFullYear();
-    if(today.getMonth() < this.birthday.getMonth() && today.getDate() < this.birthday.getDate()) age --;
-    return age;
+  ngOnInit() {
+    this.api.getHome().subscribe((data: HomeData) => {
+      this.home.set(data)
+    });
   }
 }

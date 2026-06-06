@@ -14,6 +14,23 @@
   visibility: visible;
 }
 
+.centered{
+  justify-content: center;
+  align-items: center;
+  padding: 10em;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  flex: 1 1;
+}
+
 h1,h2,h3,h4,h5,h6,span,p, a, button{
   color: var(--mat-sys-on-surface);
 }
@@ -26,6 +43,10 @@ h1{
 span, a,p,button {
   font-size: large;
   font-weight: normal;
+}
+
+p{
+  justify-content: left;
 }
 
 a{

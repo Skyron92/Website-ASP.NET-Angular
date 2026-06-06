@@ -1,3 +1,12 @@
-<h1>{{title}}</h1>
+<div class="row centered">
+  @if (home()) {
+    <div class="column">
+      <h1>{{home()!.title}}</h1>
 
-<p>{{presentation}}</p>
+      <p>{{home()!.presentation}}</p>
+    </div>
+    <img [ngSrc]="home()!.imageUrl" alt="" fill />
+  } @else {
+    <mat-progress-spinner/>
+  }
+</div>
