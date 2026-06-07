@@ -1,12 +1,17 @@
-<div class="row centered">
-  @if (home()) {
-    <div class="column">
-      <h1>{{home()!.title}}</h1>
+<div class="column">
+  <div class="row centered">
+    @if (home()) {
+      <div class="column max-width-50">
+        <h1>{{home()!.title}}</h1>
 
-      <p>{{home()!.presentation}}</p>
-    </div>
-    <img [ngSrc]="home()!.imageUrl" alt="" fill />
-  } @else {
-    <mat-progress-spinner/>
-  }
+        <p>{{home()!.presentation}}</p>
+      </div>
+      <img [ngSrc]="buildResourcesUrl(home()!.imageUrl)" alt="" width="500" height="500"/>
+    } @else {
+      <mat-progress-spinner/>
+    }
+  </div>
+  <div class="row">
+    
+  </div>
 </div>
