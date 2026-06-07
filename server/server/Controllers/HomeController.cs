@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using server.Controllers;
 using server.Models;
+using server.Repositories;
 
-namespace server.Routes;
+namespace server.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

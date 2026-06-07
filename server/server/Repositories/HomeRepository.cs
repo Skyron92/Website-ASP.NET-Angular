@@ -1,7 +1,7 @@
 ﻿using server.Models;
 using server.Utils;
 
-namespace server.Controllers;
+namespace server.Repositories;
 
 public class HomeRepository
 {
