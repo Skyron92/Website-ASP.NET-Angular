@@ -1,0 +1,17 @@
+@if (contact()){
+  <div class="column centered">
+    @for (link of contact()!.links; track link){
+      <a matIconButton [href]="link.url" target="_blank" [download]="isFileUrl(link.url) ? link.url : undefined" class="contact-btn">
+        <mat-icon
+          [svgIcon]="isSvg(link.icon) ? link.icon : ''"
+        >
+          {{ !isSvg(link.icon) ? link.icon : '' }}
+        </mat-icon>
+        {{link.name}}
+        <span class="fill"></span>
+      </a>
+    }
+  </div>
+} @else {
+  <mat-progress-spinner/>
+}

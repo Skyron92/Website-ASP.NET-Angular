@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { Api } from '../../services/api';
+import { Api } from '../../services/api/api';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { buildResourcesUrl } from '../../utils/utils';
 

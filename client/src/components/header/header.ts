@@ -30,7 +30,7 @@ export class Header implements OnInit {
   ngOnInit() {
     this.navigators = [
       this.createNavigator("Mes compétences", "bolt", "/skills"),
-      this.createNavigator("Mes projets", "code", "/projects"),
+      this.createNavigator("Mes projets", "lightbulb", "/projects"),
       this.createNavigator("Mon parcours", "work", "/experiences"),
       this.createNavigator("Contact", "mail", "/contact"),
     ]
