@@ -1,7 +1,7 @@
 @if (contact()){
   <div class="column centered">
     @for (link of contact()!.links; track link){
-      <a matIconButton [href]="link.url" target="_blank" [download]="isFileUrl(link.url) ? link.url : undefined" class="contact-btn">
+      <a matIconButton [href]="link.url" target="_blank" class="contact-btn">
         <mat-icon
           [svgIcon]="isSvg(link.icon) ? link.icon : ''"
         >

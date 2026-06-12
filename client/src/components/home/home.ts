@@ -2,7 +2,6 @@ import { Component, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { Api } from '../../services/api/api';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
-import { buildResourcesUrl } from '../../utils/utils';
 
 interface HomeData{
   title: string;
@@ -26,6 +25,4 @@ export class Home {
       this.home.set(data)
     });
   }
-
-  protected readonly buildResourcesUrl = buildResourcesUrl;
 }

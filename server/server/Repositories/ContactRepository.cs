@@ -1,4 +1,5 @@
 ﻿using server.Models;
+using server.Utils;
 
 namespace server.Repositories;
 
@@ -16,7 +17,7 @@ public class ContactRepository
             BuildLink("Linkedin", "https://www.linkedin.com/in/leo-courtier/", "linkedin"),
             BuildLink("Github", "https://github.com/Skyron92", "github"),
             BuildLink("Email", "mailto:courtier.leo@gmail.com", "mail"),
-            BuildLink("CV", "/files/cv.pdf", "download")
+            BuildLink("CV", $"{Constants.ServerBaseUrl}/api/contact/cv", "download")
         ];
 
         var contact = new Contact() {

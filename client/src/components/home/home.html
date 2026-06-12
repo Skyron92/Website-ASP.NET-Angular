@@ -6,7 +6,7 @@
 
         <p>{{home()!.presentation}}</p>
       </div>
-      <img [ngSrc]="buildResourcesUrl(home()!.imageUrl)" alt="" width="500" height="500" priority/>
+      <img [ngSrc]="home()!.imageUrl" alt="" width="500" height="500" priority/>
     } @else {
       <mat-progress-spinner/>
     }

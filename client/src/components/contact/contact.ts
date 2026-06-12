@@ -3,8 +3,6 @@ import { Api } from '../../services/api/api';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { escapeRegExp } from '@angular/compiler';
-import { NgOptimizedImage } from '@angular/common';
 import { SvgMapper } from '../../services/svg-mapper/svg-mapper';
 
 interface ContactData {
@@ -19,7 +17,7 @@ interface Link {
 
 @Component({
   selector: 'app-contact',
-  imports: [MatProgressSpinner, MatButtonModule, MatIconModule, NgOptimizedImage],
+  imports: [MatProgressSpinner, MatButtonModule, MatIconModule],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
@@ -40,7 +38,7 @@ export class Contact implements OnInit {
    * @return True if the given string is an url, false if this string is supposed to be used as icon alias.
    */
   isFileUrl(icon: string): boolean {
-    const regexp = new RegExp(/^[\\/](?:[^\\/\s]+[\\/])*[^\\/\s]+\.[a-zA-Z0-9]+$/);
+    const regexp = new RegExp(/\.(pdf|zip|docx?|png|jpg|jpeg)$/i);
     return regexp.test(icon);
   }
 

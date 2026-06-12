@@ -14,4 +14,14 @@ public class ContactController : ControllerBase {
         var contact = await Repository.Get();
         return Ok(contact);
     }
+    
+    [HttpGet("cv")]
+    public IActionResult DownloadCv() {
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", "cv.pdf");
+    
+        if (!System.IO.File.Exists(filePath))
+            return NotFound();
+
+        return PhysicalFile(filePath, "application/pdf", "CV_LeoCourtier.pdf");
+    }
 }
